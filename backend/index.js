@@ -6,7 +6,13 @@ require("dotenv").config();
 const app = express();
 
 // Middleware setup
-app.use(cors({ origin: "http://localhost:5173" })); // Allow cross-origin requests
+app.use(
+  cors({
+    origin: {
+      "http://localhost:3000": true, // Allow local development
+    },
+  })
+); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB connection using Mongoose
