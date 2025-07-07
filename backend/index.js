@@ -6,11 +6,7 @@ require("dotenv").config();
 const app = express();
 
 // Middleware setup
-app.use(
-  cors({
-    origin: "https://finance-tracker-b1.vercel.app",
-  })
-); // Allow cross-origin requests
+app.use(cors({ origin: "*" })); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB connection using Mongoose
