@@ -9,7 +9,7 @@ const app = express();
 app.use(
   cors({
     origin: {
-      "http://localhost:3000": true, // Allow local development
+      "http://localhost:5173": true, // Allow local development
     },
   })
 ); // Allow cross-origin requests
