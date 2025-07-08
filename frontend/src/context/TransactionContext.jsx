@@ -63,7 +63,7 @@ export const TransactionProvider = ({ children }) => {
 
   // GET: Fetch all transactions
   useEffect(() => {
-    fetch("https://finance-tracker-server-bb9f.onrender.com/transactions")
+    fetch("https://finance-tracker-b2.onrender.com/transactions")
       .then((res) => res.json())
       .then((data) => {
         setTransactions(data);
@@ -79,7 +79,7 @@ export const TransactionProvider = ({ children }) => {
   const addTransaction = async (tx) => {
     try {
       const res = await fetch(
-        "https://finance-tracker-server-bb9f.onrender.com/transactions",
+        "https://finance-tracker-b2.onrender.com/transactions",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -98,7 +98,7 @@ export const TransactionProvider = ({ children }) => {
   const deleteTransaction = async (_id) => {
     try {
       await fetch(
-        `https://finance-tracker-server-bb9f.onrender.com/transactions/${_id}`,
+        `https://finance-tracker-b2.onrender.com/transactions/${_id}`,
         {
           method: "DELETE",
         }
@@ -113,7 +113,7 @@ export const TransactionProvider = ({ children }) => {
   const editTransaction = async (_id, tx) => {
     try {
       const updatedTx = await fetch(
-        `https://finance-tracker-server-bb9f.onrender.com/transactions/${_id}`,
+        `https://finance-tracker-b2.onrender.com/transactions/${_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
