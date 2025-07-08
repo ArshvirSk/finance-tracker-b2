@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 
 // Middleware setup
-app.use(cors({ origin: "*" })); // Allow cross-origin requests
+app.use(cors()); // Allow cross-origin requests
 app.use(express.json()); // Parse JSON bodies
 
 // MongoDB connection using Mongoose
@@ -40,6 +40,10 @@ const transactionSchema = new mongoose.Schema({
 
 // Create a model from the schema
 const Transaction = mongoose.model("Transaction", transactionSchema);
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the Finance Tracker API!");
+});
 
 // GET /transactions - fetch all transactions
 app.get("/transactions", async (req, res) => {
